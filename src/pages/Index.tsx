@@ -62,6 +62,39 @@ const FAQS = [
   },
 ];
 
+const ADVANTAGES = [
+  {
+    icon: "Users",
+    title: "Русская команда в Китае",
+    desc: "Вам не нужно самостоятельно общаться с поставщиками. Мы ведём переговоры, выкупаем товар и контролируем процесс на месте.",
+  },
+  {
+    icon: "ShieldCheck",
+    title: "Проверка товара ДО отправки",
+    desc: "Делаем фото/видео отчёт, проверяем количество, упаковку и базовое качество. Исключаем брак и пересорт до того, как груз покинет Китай.",
+  },
+  {
+    icon: "Link",
+    title: "Прямая работа без посредников",
+    desc: "Свой склад, своя сборка, своя отправка. Вы платите за логистику, а не за цепочку перекупщиков.",
+  },
+  {
+    icon: "Zap",
+    title: "Быстрая коммуникация",
+    desc: "Отвечаем за 15 минут. Менеджер всегда на связи, проактивно информирует о статусах.",
+  },
+  {
+    icon: "ShoppingBag",
+    title: "Понимаем селлеров маркетплейсов",
+    desc: "Знаем требования WB/Ozon к упаковке, маркировке, срокам. Помогаем считать себестоимость и оптимизировать логистику.",
+  },
+  {
+    icon: "ReceiptText",
+    title: "Прозрачные тарифы",
+    desc: "Фиксированная смета с разбивкой: выкуп, проверка, доставка, таможня. Без скрытых комиссий и доплат на выдаче.",
+  },
+];
+
 const DELIVERY_TYPES = [
   { id: "sea", label: "Морем", days: "25–45 дней", rate: 80 },
   { id: "air", label: "Авиа", days: "7–15 дней", rate: 220 },
@@ -177,6 +210,32 @@ const Index = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ADVANTAGES */}
+      <section className="py-24 bg-[hsl(var(--primary))]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-14">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[hsl(213,90%,54%)]">Почему мы</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-white uppercase mt-2">
+              Наши преимущества
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 rounded-xl overflow-hidden">
+            {ADVANTAGES.map((adv, i) => (
+              <div
+                key={i}
+                className="bg-[hsl(215,80%,18%)] p-8 group hover:bg-[hsl(215,80%,25%)] transition-colors"
+              >
+                <div className="w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center mb-5 group-hover:bg-[hsl(213,90%,54%)]/20 transition-colors">
+                  <Icon name={adv.icon} fallback="Star" size={20} className="text-[hsl(213,90%,54%)]" />
+                </div>
+                <h3 className="font-semibold text-white text-base mb-2 leading-snug">{adv.title}</h3>
+                <p className="text-white/60 text-sm leading-relaxed">{adv.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
